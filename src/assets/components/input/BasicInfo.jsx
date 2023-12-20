@@ -1,3 +1,6 @@
+import Chevron from '../../icons/Chevron'
+import { useState } from 'react'
+
 function BasicInfo({
   name,
   handleName,
@@ -14,9 +17,20 @@ function BasicInfo({
   city,
   handleCity,
 }) {
+
+  const [open, setOpen] = useState(false)
+  const openDropdown = () => {
+      console.log(open)
+      setOpen(!open)
+  }
+
+
   return (
-    <div className="basic-information">
-      <h3>Basic information</h3>
+    <div className={`basic-information ${open? 'active' : 'inactive' }`}   >
+      <div className="basic-title" onClick={openDropdown}>
+        <h3>Basic information</h3>
+        <Chevron />
+      </div>
       <div className="info-section">
         <p>Name:</p>
         <input
@@ -80,7 +94,7 @@ function BasicInfo({
         <p>City:</p>
         <input type="text" value={city} onChange={handleCity} />
       </div>
-      <button>Save</button>
+      <button onClick={openDropdown}>Save</button>
     </div>
   );
 }

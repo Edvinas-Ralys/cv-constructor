@@ -61,6 +61,7 @@ function App() {
           city={city}
           handleCity={handleCity}
         />
+
         <Preview
           name={name}
           lastName={lastName}

@@ -1,3 +1,8 @@
+$inputBg:#7b9e8983;
+$cardColor: #7b9e8983;
+$prevWidth: 32vw;
+$cardHover:#7b9e89;
+
 #root {
   display: flex;
   justify-content: center;
@@ -6,14 +11,18 @@
 
 .main {
   // border: 2px solid black;
+  margin-top: 20px;
   box-sizing: border-box;
   width: 90vw;
   height: 100vh;
   .sides {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
     .preview-side {
-      width: 70%;
+      width: $prevWidth;
+      height: calc($prevWidth * 1.4);
+      border: 1px solid gray;
       .header {
         height: 150px;
         width: 100%;
@@ -23,23 +32,29 @@
         justify-content: space-between;
         align-items: center;
         .name-title {
-          margin-left: 50px;
+          margin-left: calc($prevWidth *0.05);
           display: flex;
           width: fit-content;
           flex-direction: column;
           gap: 20px;
           .prev-name {
-            font-size: 56px;
+            font-size: calc($prevWidth *0.09);
           }
           .prev-title {
-            font-size: 25px;
+            font-size: calc($prevWidth *0.04);
             font-style: italic;
-            height: 30px;
+            height: calc($prevWidth *0.05);;
           }
+
+
+        }
+        .prev-email, .prev-number, .prev-country{
+          font-size: calc($prevWidth *0.03);
         }
         .contacts{
           height: 100px;
-          width: 200px;
+          width: fit-content;
+          padding: calc($prevWidth *0.05);
           display: flex;
           flex-direction: column;
           gap: 15px;
@@ -48,7 +63,11 @@
       }
     }
     .input-side {
-      width: 25vw;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 30px;
       .basic-information{
         display: flex;
         flex-direction: column;
@@ -59,11 +78,28 @@
         margin-left: 10px;
         background-color: #7b9e8983;
         border-radius: 20px;
+        .basic-title{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          border-radius: 20px;
+          margin-top: 5px;
+          transition: 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover{
+            background-color: $cardHover;
+            transition: 0.2s ease-in-out;
+          }
+          &:active{
+            transform: scale(0.95);
+          }
+        }
         h3{
           font-size: 20px;
           text-align: center;
           padding-bottom: 15px;
           padding-top: 15px;
+          user-select: none;
         }
         .info-section{
           display: flex;
@@ -71,5 +107,27 @@
         }
       }
     }
+  }
+}
+
+.chevron{
+  height: 30px;
+}
+
+.active{
+  max-height: 500px;
+  transition: max-height 0.2s ease-in-out;
+    .info-section{
+      opacity: 1;
+      transition: opacity 0.1s ease-in-out;
+    }
+}
+.inactive{
+  max-height: 45px;
+  transition: max-height 0.2s ease-in-out;
+  .info-section, button{
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    overflow: hidden;
   }
 }

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import BasicInfo from "./input/BasicInfo";
 
 function Input({
@@ -13,8 +14,7 @@ function Input({
   country,
   handleCountry,
   city,
-  handleCity
-
+  handleCity,
 }) {
   return (
     <div className="input-side">
