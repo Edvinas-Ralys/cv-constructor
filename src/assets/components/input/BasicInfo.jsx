@@ -2,20 +2,8 @@ import Chevron from '../../icons/Chevron'
 import { useState } from 'react'
 
 function BasicInfo({
-  name,
-  handleName,
-  lastName,
-  handleLastName,
-  title,
-  handleTitle,
-  email,
-  handleEmail,
-  number,
-  handleNumber,
-  country,
-  handleCountry,
-  city,
-  handleCity,
+  basicMultiText,
+  handleMultiText,
 }) {
 
   const [open, setOpen] = useState(false)
@@ -23,6 +11,8 @@ function BasicInfo({
       console.log(open)
       setOpen(!open)
   }
+
+
 
 
   return (
@@ -38,8 +28,8 @@ function BasicInfo({
           name=""
           id=""
           placeholder="Name"
-          value={name}
-          onChange={handleName}
+          value={basicMultiText[0]}
+          onChange={e=>handleMultiText(e, 0)}
         />
       </div>
       <div className="info-section">
@@ -49,8 +39,8 @@ function BasicInfo({
           name=""
           id=""
           placeholder="Last name"
-          value={lastName}
-          onChange={handleLastName}
+          value={basicMultiText[1]}
+          onChange={e=>handleMultiText(e, 1)}
         />
       </div>
       <div className="info-section">
@@ -60,8 +50,8 @@ function BasicInfo({
           name=""
           id=""
           placeholder="title"
-          value={title}
-          onChange={handleTitle}
+          value={basicMultiText[2]}
+          onChange={e=>handleMultiText(e, 2)}
         />
       </div>
       <div className="info-section">
@@ -71,8 +61,8 @@ function BasicInfo({
           name=""
           id=""
           placeholder="example@gmail.com"
-          value={email}
-          onChange={handleEmail}
+          value={basicMultiText[3]}
+          onChange={e=>handleMultiText(e, 3)}
         />
       </div>
       <div className="info-section">
@@ -82,17 +72,17 @@ function BasicInfo({
           name=""
           id=""
           placeholder="+37060000000"
-          value={number}
-          onChange={handleNumber}
+          value={basicMultiText[4]}
+          onChange={e=>handleMultiText(e, 4)}
         />
       </div>
       <div className="info-section">
         <p>Country:</p>
-        <input type="text" value={country} onChange={handleCountry} />
+        <input type="text" value={basicMultiText[5]} onChange={e=>handleMultiText(e, 5)} />
       </div>
       <div className="info-section">
         <p>City:</p>
-        <input type="text" value={city} onChange={handleCity} />
+        <input type="text" value={basicMultiText[6]} onChange={e=>handleMultiText(e, 6)} />
       </div>
       <button onClick={openDropdown}>Save</button>
     </div>

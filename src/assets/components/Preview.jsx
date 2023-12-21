@@ -1,15 +1,15 @@
 import Header from "./preview/Header";
-function Preview({ name, lastName, title, email, number, country, city }) {
+function Preview({ basicMultiText}) {
   return (
     <div className="preview-side">
       <Header
-        name={name}
-        lastName={lastName}
-        title={title}
-        email={email}
-        number={number}
-        country={country}
-        city={city}
+        name={basicMultiText[0]}
+        lastName={basicMultiText[1]}
+        title={basicMultiText[2]}
+        email={basicMultiText[3]}
+        number={basicMultiText[4]}
+        country={basicMultiText[5]}
+        city={basicMultiText[6]}
       />
     </div>
   );
