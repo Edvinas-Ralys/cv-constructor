@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
-function AddEducation(removeEducation) {
-
+function EducationItem() {
 
   return (
     <>
-      <div className="info-section">
+      <div key={uuidv4} className="info-section">
         <p>School:</p>
         <input type="text" />
       </div>
@@ -26,9 +26,9 @@ function AddEducation(removeEducation) {
         <p>End date:</p>
         <input type="date" />
       </div>
-      <button onClick={removeEducation} className="remove-button">Remove</button>
+      <button className="remove-button">Remove</button>
     </>
   );
 }
 
-export default AddEducation;
+export default EducationItem;
