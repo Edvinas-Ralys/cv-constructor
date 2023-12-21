@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BasicInfo from "./input/BasicInfo";
+import Education from "./input/Education";
 
 function Input({
   basicMultiText,
@@ -11,6 +12,7 @@ function Input({
           basicMultiText={basicMultiText}
           handleMultiText={handleMultiText}
       />
+      <Education />
     </div>
   );
 }

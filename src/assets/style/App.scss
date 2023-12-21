@@ -1,8 +1,8 @@
-$inputBg:#483A58;
+$inputBg: #483a58;
 $inputFieldBg: #fff;
-$cardColor: #56638A;
+$cardColor: #56638a;
 $prevWidth: 32vw;
-$cardHover:#7d86a3;
+$cardHover: #7d86a3;
 
 #root {
   display: flex;
@@ -33,29 +33,29 @@ $cardHover:#7d86a3;
         justify-content: space-between;
         align-items: center;
         .name-title {
-          margin-left: calc($prevWidth *0.05);
+          margin-left: calc($prevWidth * 0.05);
           display: flex;
           width: fit-content;
           flex-direction: column;
           gap: 20px;
           .prev-name {
-            font-size: calc($prevWidth *0.09);
+            font-size: calc($prevWidth * 0.09);
           }
           .prev-title {
-            font-size: calc($prevWidth *0.04);
+            font-size: calc($prevWidth * 0.04);
             font-style: italic;
-            height: calc($prevWidth *0.05);;
+            height: calc($prevWidth * 0.05);
           }
-
-
         }
-        .prev-email, .prev-number, .prev-country{
-          font-size: calc($prevWidth *0.03);
+        .prev-email,
+        .prev-number,
+        .prev-country {
+          font-size: calc($prevWidth * 0.03);
         }
-        .contacts{
+        .contacts {
           height: 100px;
           width: fit-content;
-          padding: calc($prevWidth *0.05);
+          padding: calc($prevWidth * 0.05);
           display: flex;
           flex-direction: column;
           gap: 15px;
@@ -69,17 +69,17 @@ $cardHover:#7d86a3;
       flex-direction: column;
       justify-content: center;
       gap: 30px;
-      .basic-information{
+      .basic-information, .education {
         display: flex;
         flex-direction: column;
-        gap:10px;
+        gap: 10px;
         padding-bottom: 15px;
         padding-right: 20px;
         padding-left: 20px;
         margin-left: 10px;
         background-color: $cardColor;
         border-radius: 20px;
-        .basic-title{
+        .basic-title, .education-title {
           display: flex;
           align-items: center;
           justify-content: space-around;
@@ -87,38 +87,55 @@ $cardHover:#7d86a3;
           margin-top: 5px;
           transition: 0.2s ease-in-out;
           cursor: pointer;
-          &:hover{
+          &:hover {
             background-color: $cardHover;
             transition: 0.2s ease-in-out;
           }
-          &:active{
+          &:active {
             transform: scale(0.95);
           }
+
         }
-        h3{
+        h3 {
           font-size: 20px;
           text-align: center;
           padding-bottom: 15px;
           padding-top: 15px;
           user-select: none;
         }
-        .info-section{
+        .info-section {
           display: flex;
           justify-content: space-between;
           font-size: 25px;
-          input{
+          input {
             background-color: $inputFieldBg;
             font-family: oswald;
             font-size: 18px;
-            border: 1px solid #9A8F97;
+            border: 1px solid #9a8f97;
             border-radius: 4px;
-            &:focus{
+            &:focus {
               outline: none;
-              border:1px solid black;
+              border: 1px solid black;
               background-color: rgb(180, 201, 180);
-
             }
-
+          }
+        }
+        .add-education{
+          display: flex;
+          font-size: 25px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-bottom: 7px;
+          padding-top: 7px;
+          width: 40%;
+          transition: 0.2s ease-in-out;
+          &:hover{
+            background-color: $cardHover;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
           }
         }
       }
@@ -126,22 +143,25 @@ $cardHover:#7d86a3;
   }
 }
 
-.chevron{
+
+.chevron, .plus {
   height: 30px;
 }
 
-.active{
-  max-height: 500px;
+
+.active {
+  max-height: 2000px;
   transition: max-height 0.2s ease-in-out;
-    .info-section{
-      opacity: 1;
-      transition: opacity 0.1s ease-in-out;
-    }
+  .info-section {
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+  }
 }
-.inactive{
+.inactive {
   max-height: 45px;
   transition: max-height 0.2s ease-in-out;
-  .info-section, button{
+  .info-section,
+  button, .add-education {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
     overflow: hidden;
