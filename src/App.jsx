@@ -8,7 +8,6 @@ import { useState } from "react";
 function App() {
   const [basicMultiText, setBasicMultiText] = useState([``, ``, ``, ``, ``, ``, ``])
   const handleMultiText = (e, index) =>{
-    console.log(`name` + basicMultiText[0])
     setBasicMultiText(prev => prev.map((item, i) => i === index ? e.target.value : item))
   }
 

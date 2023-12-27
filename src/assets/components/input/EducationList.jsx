@@ -1,12 +1,20 @@
-import EducationItem from "./EducationItem"
+import { useEffect, useState } from "react";
+import EducationItem from "./EducationItem";
+import { v4 as uuidv4 } from "uuid";
 
-function EducationList({}) {
-
+function EducationList({ text, eduItem, addEducation }) {
   return (
     <div>
-        <EducationItem />
+      {eduItem.map((item) => (
+        <EducationItem
+          key={uuidv4()}
+          text={`HELLO`}
+          eduItem={eduItem}
+          addEducation={addEducation}
+        />
+      ))}
     </div>
-  )
+  );
 }
 
-export default EducationList
+export default EducationList;
