@@ -7,7 +7,7 @@ function Output() {
     const [personalInfo, setPersonalInfo] = useContext(InfoContext)
 
   return (
-    <div>
+    <div className="output">
       <p>Name: {personalInfo.name}</p>
       <p>Surname: {personalInfo.surname}</p>
       <p>Email: {personalInfo.email} </p>

@@ -1,5 +1,202 @@
-.main{
-    display: flex;
-    justify-content: space-around;
+$inputBg:rgba(64, 72, 114, 0.123);
+$bottomBorderFocus:2px solid rgb(83, 83, 236);
+$textFocus:rgb(87, 126, 255) ;
 
+::-webkit-scrollbar {
+  width: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body{
+  font-family: Nunito;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+
+  .user-input,
+  .output {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    // flex-direction: column;
+  }
+}
+
+.user-input {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+input {
+  height: 37px;
+  background-color: $inputBg;
+  border: 2px solid white;
+  border-radius: 3px;
+  font-size: 17px;
+  padding-left: 10px;
+  font-family: Nunito;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(83, 83, 236);
+    // box-sizing: border-box;
+  }
+}
+
+.personal-input, .info-section, .employment-input, .empl-edit {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  gap: 20px;
+  box-sizing: border-box;
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .description{
+        font-size: 15px;
+        margin: 0;
+        font-weight: 100;
+        color: gray;
+    }
+  }
+
+  .inputs {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    width: 100%;
+
+    .job-title {
+      display: flex;
+      flex-direction: column;
+      width: 47%;
+      color: gray;
+    }
+  }
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5%;
+
+    & > * {
+      flex-shrink: 1;
+      width: 50%;
+    }
+    .input {
+      color: gray;
+      font-size: 17px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .single {
+    justify-content: flex-start;
+    width: 95%;
+  }
+  .aditional-click {
+    color: rgb(87, 126, 255);
+    font-size: 18px;
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+      color: blue;
+    }
+  }
+}
+
+
+.content{
+  textarea{
+    width: 100%;
+    height: 200px;
+    background-color:$inputBg;
+    border: none;
+    resize: none;
+    padding: 20px;
+    font-size: 20px;
+    font-family: Nunito;
+    box-sizing: border-box;
+    &:focus{
+      outline: none;
+      border-bottom: $bottomBorderFocus ;
+    }
+  }
+}
+
+
+.employment-list{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.empl-card{
+  width: 100%;
+  height: fit-content;
+  border: 1px solid rgba(128, 128, 128, 0.514);
+  box-sizing: border-box;
+  // position: relative;
+
+  .empl-edit{
+    padding-bottom: 20px;
+  }
+  .dates-split{
+    width: 48%;
+    .date-inputs{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .cont{
+    padding: 15px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cont-title{
+      display: flex;
+      flex-direction: column;
+      p{
+        margin: 0;
+        padding: 0;
+      }
+      .date{
+        color: gray;
+        font-weight: 100;
+        font-size: 12px;
+      }
+    }
+    &:hover{
+      color: $textFocus;
+      cursor: pointer;
+    }
+
+  }
+}
+
+.delete{
+
+  &>*{
+    height: 30px;
+    z-index: 10;
+  }
+  // height: 30px;
 }

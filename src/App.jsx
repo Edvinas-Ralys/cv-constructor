@@ -13,6 +13,7 @@ function App() {
     phoneNumber: ``,
     city: ``,
     country: ``,
+    education: [],
   })
 
 
