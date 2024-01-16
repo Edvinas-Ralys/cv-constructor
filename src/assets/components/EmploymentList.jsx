@@ -1,13 +1,22 @@
 import { useState } from "react"
 import EmploymentItem from "./EmploymentItem"
+import { v4 as uuidv4 } from "uuid"
 
 function EmploymentList() {
-  const [employment, setEmployment] = useState([])
+
 
   const handleEmpl = _ => {
     setEmployment(prev => [
       ...prev,
-      { jobTitle: ``, employer: ``, startData: ``, endDate: ``, city: ``, description: `` },
+      {
+        jobTitle: ``,
+        employer: ``,
+        startData: ``,
+        endDate: ``,
+        city: ``,
+        description: ``,
+        id: uuidv4(),
+      },
     ])
     console.log(employment)
   }

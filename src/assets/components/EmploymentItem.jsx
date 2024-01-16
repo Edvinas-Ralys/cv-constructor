@@ -5,6 +5,7 @@ function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
   const [info, setInfo] = useState(item)
 
+
   return (
     <>
       <div className="empl-card">
@@ -17,7 +18,7 @@ function EmploymentItem({ item }) {
               {info.endDate === `` ? `` : info.endDate}
             </p>
           </div>
-          <div  className="delete">{DeleteIcon}</div>
+          <div onClick={_=>setDeleteEmpl(info)}  className="delete">{DeleteIcon}</div>
         </div>
         {editCard && (
           <div className="empl-edit">

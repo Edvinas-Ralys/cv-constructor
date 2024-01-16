@@ -5,7 +5,7 @@ function PersonalInfo() {
   // const personalInfo = useContext(InfoContext)
   // const setPersonalInfo = useContext(InfoContext)
 
-  const [personalInfo, setPersonalInfo] = useContext(InfoContext)
+  const { personalInfo, setPersonalInfo } = useContext(InfoContext)
   const [aditionalInfo, setAditionalInfo] = useState(false)
 
 
