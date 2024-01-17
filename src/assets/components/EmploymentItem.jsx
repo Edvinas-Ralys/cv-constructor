@@ -6,20 +6,19 @@ function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
   const { employment, setEmployment } = useContext(CVInformation)
 
-  const checkEmpl = _ => {
-    console.log(employment)
-    console.log(item)
+  const destroyEmpl =_ =>{
+    setEmployment(jobs => jobs.filter(job => job.id !== item.id))
   }
 
   return (
     <>
       <div className="empl-card">
-        <div onClick={_ => setEditCard(!editCard)} className="cont">
-          <div className="cont-title">
+        <div  className="cont">
+          <div onClick={_ => setEditCard(!editCard)}className="cont-title">
             <p>{item.jobTitle === `` ? `Not specified` : item.jobTitle}</p>
             <p className="date"></p>
           </div>
-          <div className="delete">{DeleteIcon}</div>
+          <div onClick={destroyEmpl} className="delete">{DeleteIcon}</div>
         </div>
         {editCard && (
           <div className="empl-edit">
@@ -115,7 +114,6 @@ function EmploymentItem({ item }) {
                 }
               ></textarea>
             </div>
-            <button onClick={checkEmpl}>Check employment</button>
           </div>
         )}
       </div>
