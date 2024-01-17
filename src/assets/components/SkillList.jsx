@@ -1,7 +1,12 @@
+import { useContext } from "react"
 import SkillSelect from "./SkillSelect"
-import { skills } from "./data/skills"
+import { skillsPreset } from "./data/skillsPreset"
+import { CVInformation } from "./data/InformationCont"
+import { v4 as uuidv4 } from "uuid"
 
 function SkillList() {
+  const { skills } = useContext(CVInformation)
+
   return (
     <div className="skills-input">
       <div className="title">
@@ -13,10 +18,20 @@ function SkillList() {
       </div>
 
       <div className="skill-pool">
-        {skills.map(skill => (
-          <SkillSelect skill={skill} />
+        {skillsPreset.map((skill, i) => (
+          <SkillSelect key={i} skill={skill} index={i} />
         ))}
       </div>
+      <div className="skill-list">
+        {skills.map((skill, i) => (
+          <div key={i} className="skill-item">
+            {skill.text}
+          </div>
+        ))}
+      </div>
+      <p className="aditional-click">
+        {skills.length === 0 ? `+ Add skill` : `+ Add one more skill`}
+      </p>
     </div>
   )
 }

@@ -25,6 +25,8 @@ export const CVInformationProvider = ({ children }) => {
         setEmployment,
         education,
         setEducation,
+        skills,
+        setSkills,
       }}
     >
       {children}

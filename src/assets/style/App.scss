@@ -223,6 +223,7 @@ input {
     color: gray;
     transition: 0.2s ease-in-out;
     font-weight: 700;
+    user-select: none;
     &:hover{
       cursor: pointer;
       color: $textFocus;
@@ -230,4 +231,12 @@ input {
       transition: 0.2s ease-in-out;
     }
   }
+}
+
+
+.picked-skill{
+  background-color: $textFocus !important;
+  color: white !important;
+  user-select: none;
+  // pointer-events: none;
 }
