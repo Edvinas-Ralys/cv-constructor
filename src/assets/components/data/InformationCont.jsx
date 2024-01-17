@@ -14,6 +14,7 @@ export const CVInformationProvider = ({ children }) => {
   })
   const [employment, setEmployment] = useState([])
   const [education, setEducation] = useState([])
+  const [skills, setSkills] = useState([])
 
   return (
     <CVInformation.Provider

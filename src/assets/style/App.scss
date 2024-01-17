@@ -58,7 +58,7 @@ input {
 .employment-input,
 .empl-edit,
 .edu-edit,
-.education-input {
+.education-input, .skills-input {
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -208,6 +208,26 @@ input {
       cursor: pointer;
       transform: scale(1.1);
       transition: 0.1s ease-in-out;
+    }
+  }
+}
+
+.skill-pool{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  .skill-select{
+    background-color:$inputBg ;
+    padding: 5px;
+    border-radius: 5px;
+    color: gray;
+    transition: 0.2s ease-in-out;
+    font-weight: 700;
+    &:hover{
+      cursor: pointer;
+      color: $textFocus;
+      background-color: rgba(134, 132, 226, 0.226);
+      transition: 0.2s ease-in-out;
     }
   }
 }
