@@ -11,9 +11,7 @@ export const CVInformationProvider = ({ children }) => {
     city: ``,
     country: ``,
     profSum: ``,
-    emplList: [],
   })
-  const [deleteEmpl, setDeleteEmpl] = useState(null)
   const [employment, setEmployment] = useState([])
 
   return (
@@ -21,8 +19,6 @@ export const CVInformationProvider = ({ children }) => {
       value={{
         personalInfo,
         setPersonalInfo,
-        deleteEmpl,
-        setDeleteEmpl,
         employment,
         setEmployment,
       }}

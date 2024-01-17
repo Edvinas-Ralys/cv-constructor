@@ -1,4 +1,3 @@
-
 import { DeleteIcon } from "./Icons"
 import { useContext, useState } from "react"
 import { CVInformation } from "./data/InformationCont"
@@ -7,8 +6,23 @@ function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
   const { personalInfo, setPersonalInfo } = useContext(CVInformation)
 
-  const [info, setInfo] = useState(item)
+  const handleTitle = e => {
+    personalInfo.emplList.map(
+      item =>
+        item.id === item.id &&
+        setPersonalInfo(prev => ({
+          ...prev,
+          emplList: [
+            ...prev.emplList,
+            {
+              jobTitle: e.target.value,
+            },
+          ],
+        }))
+    )
+  }
 
+  const [info, setInfo] = useState(item)
 
   return (
     <>
@@ -32,7 +46,7 @@ function EmploymentItem({ item }) {
                 <input
                   type="text"
                   value={info.jobTitle}
-                  onChange={e => setInfo({ ...info, jobTitle: e.target.value })}
+                  onChange={e => setInfo(handleTitle)}
                   id="title"
                 />
               </div>
