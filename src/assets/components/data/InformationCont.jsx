@@ -13,6 +13,7 @@ export const CVInformationProvider = ({ children }) => {
     profSum: ``,
   })
   const [employment, setEmployment] = useState([])
+  const [education, setEducation] = useState([])
 
   return (
     <CVInformation.Provider
@@ -21,6 +22,8 @@ export const CVInformationProvider = ({ children }) => {
         setPersonalInfo,
         employment,
         setEmployment,
+        education,
+        setEducation,
       }}
     >
       {children}

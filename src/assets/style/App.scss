@@ -1,6 +1,6 @@
-$inputBg:rgba(64, 72, 114, 0.123);
-$bottomBorderFocus:2px solid rgb(83, 83, 236);
-$textFocus:rgb(87, 126, 255) ;
+$inputBg: rgba(64, 72, 114, 0.123);
+$bottomBorderFocus: 2px solid rgb(83, 83, 236);
+$textFocus: rgb(87, 126, 255);
 
 ::-webkit-scrollbar {
   width: 0;
@@ -11,7 +11,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-body{
+body {
   font-family: Nunito;
   padding: 0;
   margin: 0;
@@ -53,14 +53,20 @@ input {
   }
 }
 
-.personal-input, .info-section, .employment-input, .empl-edit {
+.personal-input,
+.info-section,
+.employment-input,
+.empl-edit,
+.edu-edit,
+.education-input {
   display: flex;
   flex-direction: column;
   height: fit-content;
   width: 100%;
-  padding-left: 9%;
+  padding-left: 5%;
   padding-right: 5%;
-  gap: 20px;
+  padding-bottom: 5%;
+  gap: 10px;
   box-sizing: border-box;
   .title {
     font-size: 28px;
@@ -68,11 +74,11 @@ input {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    .description{
-        font-size: 15px;
-        margin: 0;
-        font-weight: 100;
-        color: gray;
+    .description {
+      font-size: 15px;
+      margin: 0;
+      font-weight: 100;
+      color: gray;
     }
   }
 
@@ -83,7 +89,8 @@ input {
     width: 100%;
     box-sizing: border-box;
 
-    .job-title, .linkedin {
+    .job-title,
+    .linkedin {
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -122,92 +129,85 @@ input {
   }
 }
 
-
-.content{
-  textarea{
+.content {
+  textarea {
     width: 100%;
     height: 200px;
-    background-color:$inputBg;
+    background-color: $inputBg;
     border: none;
     resize: none;
     padding: 20px;
     font-size: 20px;
     font-family: Nunito;
     box-sizing: border-box;
-    &:focus{
+    &:focus {
       outline: none;
-      border-bottom: $bottomBorderFocus ;
+      border-bottom: $bottomBorderFocus;
     }
   }
 }
 
-
-.employment-list{
+.employment-list, .education-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.empl-card{
+.empl-card, .edu-card {
   width: 100%;
   height: fit-content;
   border: 1px solid rgba(128, 128, 128, 0.514);
   box-sizing: border-box;
-  // position: relative;
 
-  .empl-edit{
+  .empl-edit {
     padding-bottom: 20px;
   }
-  .dates-split{
+  .dates-split {
     width: 48%;
-    .date-inputs{
+    .date-inputs {
       display: flex;
       justify-content: space-between;
     }
   }
-  .cont{
+  .cont {
     padding: 15px;
     font-weight: 700;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .cont-title{
+    .cont-title {
       display: flex;
       flex-direction: column;
       height: 100%;
       width: 80%;
-      &:hover{
+      &:hover {
         color: $textFocus;
         cursor: pointer;
       }
-      p{
+      p {
         margin: 0;
         padding: 0;
       }
-      .date{
+      .date {
         color: gray;
         font-weight: 100;
         font-size: 12px;
       }
     }
-
-
   }
 }
 
-.delete{
-
-  &>*{
+.delete {
+  & > * {
     height: 30px;
     z-index: 10;
     transition: 0.1s ease-in-out;
     fill: rgba(128, 128, 128, 0.377);
-    &:hover{
+    &:hover {
       fill: rgb(255, 75, 75);
       cursor: pointer;
       transform: scale(1.1);
       transition: 0.1s ease-in-out;
     }
   }
-
 }

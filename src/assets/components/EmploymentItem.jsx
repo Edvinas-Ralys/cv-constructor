@@ -4,7 +4,7 @@ import { CVInformation } from "./data/InformationCont"
 
 function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
-  const { employment, setEmployment } = useContext(CVInformation)
+  const { setEmployment } = useContext(CVInformation)
 
   const destroyEmpl =_ =>{
     setEmployment(jobs => jobs.filter(job => job.id !== item.id))

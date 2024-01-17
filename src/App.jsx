@@ -1,6 +1,5 @@
 import "./assets/style/App.scss"
 import Input from "./assets/components/Input"
-import { createContext, useContext, useEffect, useState } from "react"
 import Output from "./assets/components/Output"
 import { CVInformationProvider } from "./assets/components/data/InformationCont"
 
