@@ -1,11 +1,11 @@
 import { useContext, useState } from "react"
-import { InfoContext } from "../../App"
+import { CVInformation } from "./data/InformationCont"
 
 function PersonalInfo() {
-  // const personalInfo = useContext(InfoContext)
-  // const setPersonalInfo = useContext(InfoContext)
 
-  const { personalInfo, setPersonalInfo } = useContext(InfoContext)
+
+  const { personalInfo, setPersonalInfo } = useContext(CVInformation)
+
   const [aditionalInfo, setAditionalInfo] = useState(false)
 
 

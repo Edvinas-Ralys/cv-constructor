@@ -1,10 +1,10 @@
 import { useContext } from "react"
-import { InfoContext } from "../../App"
+import { CVInformation } from "./data/InformationCont"
 
 
 function Output() {
 
-    const [personalInfo, setPersonalInfo] = useContext(InfoContext)
+    const {personalInfo, setPersonalInfo} = useContext(CVInformation)
 
   return (
     <div className="output">

@@ -1,8 +1,8 @@
 
 import PersonalInfo from "./PersonalInfo"
-import { InfoContext } from "../../App"
-import { useContext } from "react"
-import Educations from "./Educations"
+// import { InfoContext } from "../../App"
+// import { useContext } from "react"
+// import Educations from "./Educations"
 import ProfesSummary from "./ProfesSummary"
 import EmploymentList from "./EmploymentList"
 

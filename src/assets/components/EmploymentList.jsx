@@ -1,25 +1,31 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { CVInformation } from "./data/InformationCont"
 import EmploymentItem from "./EmploymentItem"
 import { v4 as uuidv4 } from "uuid"
 
 function EmploymentList() {
-
+  const { personalInfo, setPersonalInfo } = useContext(CVInformation)
 
   const handleEmpl = _ => {
-    setEmployment(prev => [
+    console.log(personalInfo.emplList)
+    console.log(personalInfo)
+    setPersonalInfo(prev => ({
       ...prev,
-      {
-        jobTitle: ``,
-        employer: ``,
-        startData: ``,
-        endDate: ``,
-        city: ``,
-        description: ``,
-        id: uuidv4(),
-      },
-    ])
-    console.log(employment)
+      emplList: [
+        ...prev.emplList,
+        {
+          jobTitle: ``,
+          employer: ``,
+          startDate: ``,
+          endDate: ``,
+          city: ``,
+          description: ``,
+          id: uuidv4(),
+        },
+      ],
+    }))
   }
+
 
   return (
     <div className="employment-input">
@@ -32,13 +38,13 @@ function EmploymentList() {
       </div>
       <div className="input">
         <div className="employment-list">
-          {employment.map((item, i) => (
+          {personalInfo.emplList.map((item, i) => (
             <EmploymentItem key={i} item={item} />
           ))}
         </div>
 
         <p onClick={handleEmpl} className="aditional-click">
-          {employment.length === 0 ? `+ Add employment` : `+ Add one more employment`}
+          {personalInfo.emplList.length === 0 ? `+ Add employment` : `+ Add one more employment`}
         </p>
       </div>
     </div>

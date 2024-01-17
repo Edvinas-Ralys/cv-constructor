@@ -1,8 +1,12 @@
-import { useState } from "react"
+
 import { DeleteIcon } from "./Icons"
+import { useContext, useState } from "react"
+import { CVInformation } from "./data/InformationCont"
 
 function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
+  const { personalInfo, setPersonalInfo } = useContext(CVInformation)
+
   const [info, setInfo] = useState(item)
 
 
@@ -18,7 +22,7 @@ function EmploymentItem({ item }) {
               {info.endDate === `` ? `` : info.endDate}
             </p>
           </div>
-          <div onClick={_=>setDeleteEmpl(info)}  className="delete">{DeleteIcon}</div>
+          <div className="delete">{DeleteIcon}</div>
         </div>
         {editCard && (
           <div className="empl-edit">
