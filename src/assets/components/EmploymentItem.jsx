@@ -4,37 +4,20 @@ import { CVInformation } from "./data/InformationCont"
 
 function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
-  const { personalInfo, setPersonalInfo } = useContext(CVInformation)
+  const { employment, setEmployment } = useContext(CVInformation)
 
-  const handleTitle = e => {
-    personalInfo.emplList.map(
-      item =>
-        item.id === item.id &&
-        setPersonalInfo(prev => ({
-          ...prev,
-          emplList: [
-            ...prev.emplList,
-            {
-              jobTitle: e.target.value,
-            },
-          ],
-        }))
-    )
+  const checkEmpl = _ => {
+    console.log(employment)
+    console.log(item)
   }
-
-  const [info, setInfo] = useState(item)
 
   return (
     <>
       <div className="empl-card">
         <div onClick={_ => setEditCard(!editCard)} className="cont">
           <div className="cont-title">
-            <p>{info.jobTitle === `` ? `Not specified` : info.jobTitle}</p>
-            <p className="date">
-              {info.startDate === `` ? `` : info.startDate}{" "}
-              {info.startDate !== `` && info.endDate !== `` && `-`}{" "}
-              {info.endDate === `` ? `` : info.endDate}
-            </p>
+            <p>{item.jobTitle === `` ? `Not specified` : item.jobTitle}</p>
+            <p className="date"></p>
           </div>
           <div className="delete">{DeleteIcon}</div>
         </div>
@@ -45,8 +28,14 @@ function EmploymentItem({ item }) {
                 <label htmlFor="title">Job title</label>
                 <input
                   type="text"
-                  value={info.jobTitle}
-                  onChange={e => setInfo(handleTitle)}
+                  value={item.jobTitle}
+                  onChange={e =>
+                    setEmployment(jobs =>
+                      jobs.map(job =>
+                        job.id === item.id ? { ...job, jobTitle: e.target.value } : job
+                      )
+                    )
+                  }
                   id="title"
                 />
               </div>
@@ -55,8 +44,14 @@ function EmploymentItem({ item }) {
                 <input
                   type="text"
                   id="emplyer"
-                  value={info.employer}
-                  onChange={e => setInfo({ ...info, employer: e.target.value })}
+                  value={item.employer}
+                  onChange={e =>
+                    setEmployment(jobs =>
+                      jobs.map(job =>
+                        job.id === item.id ? { ...job, employer: e.target.value } : job
+                      )
+                    )
+                  }
                 />
               </div>
             </div>
@@ -66,25 +61,61 @@ function EmploymentItem({ item }) {
                 <div className="date-inputs">
                   <input
                     type="date"
-                    value={info.startDate}
-                    onChange={e => setInfo(prev => ({ ...prev, startDate: e.target.value }))}
+                    value={item.startDate}
+                    onChange={e =>
+                      setEmployment(jobs =>
+                        jobs.map(job =>
+                          job.id === item.id ? { ...job, startDate: e.target.value } : job
+                        )
+                      )
+                    }
                   />
                   <input
                     type="date"
-                    value={info.endDate}
-                    onChange={e => setInfo(prev => ({ ...prev, endDate: e.target.value }))}
+                    value={item.endDate}
+                    onChange={e =>
+                      setEmployment(jobs =>
+                        jobs.map(job =>
+                          job.id === item.id ? { ...job, endDate: e.target.value } : job
+                        )
+                      )
+                    }
                   />
                 </div>
               </div>
               <div className="city input">
                 <label htmlFor="city">City</label>
-                <input type="text" id="city" placeholder="city" />
+                <input
+                  type="text"
+                  id="city"
+                  placeholder="city"
+                  value={item.city}
+                  onChange={e =>
+                    setEmployment(jobs =>
+                      jobs.map(job => (job.id === item.id ? { ...job, city: e.target.value } : job))
+                    )
+                  }
+                />
               </div>
             </div>
             <div className="content">
               <label htmlFor="desct">Description</label>
-              <textarea name="" id="" cols="30" rows="50"></textarea>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="50"
+                value={item.description}
+                onChange={e =>
+                  setEmployment(jobs =>
+                    jobs.map(job =>
+                      job.id === item.id ? { ...job, description: e.target.value } : job
+                    )
+                  )
+                }
+              ></textarea>
             </div>
+            <button onClick={checkEmpl}>Check employment</button>
           </div>
         )}
       </div>
