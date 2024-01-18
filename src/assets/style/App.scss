@@ -60,7 +60,7 @@ input {
 .skill-edit,
 .education-input,
 .skills-input,
-.lang-input {
+.lang-input, .lang-edit {
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -151,7 +151,7 @@ input {
 
 .employment-list,
 .education-list,
-.skill-list {
+.skill-list, .lang-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
