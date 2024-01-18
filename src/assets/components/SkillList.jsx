@@ -3,9 +3,14 @@ import SkillSelect from "./SkillSelect"
 import { skillsPreset } from "./data/skillsPreset"
 import { CVInformation } from "./data/InformationCont"
 import { v4 as uuidv4 } from "uuid"
+import SkillItem from "./SkillItem"
 
 function SkillList() {
-  const { skills } = useContext(CVInformation)
+  const { skills, setSkills } = useContext(CVInformation)
+
+  const addCustomSkill = _ => {
+    setSkills(prev => [...prev, { text: ``, id: uuidv4() }])
+  }
 
   return (
     <div className="skills-input">
@@ -23,13 +28,11 @@ function SkillList() {
         ))}
       </div>
       <div className="skill-list">
-        {skills.map((skill, i) => (
-          <div key={i} className="skill-item">
-            {skill.text}
-          </div>
+        {skills.map((skillItem, i) => (
+          <SkillItem key={i} skillItem={skillItem} />
         ))}
       </div>
-      <p className="aditional-click">
+      <p onClick={addCustomSkill} className="aditional-click">
         {skills.length === 0 ? `+ Add skill` : `+ Add one more skill`}
       </p>
     </div>
