@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { DeleteIcon } from "./Icons"
 import { CVInformation } from "./data/InformationCont"
-import { skillsPreset } from "./data/skillsPreset"
+
 
 function SkillItem({ skillItem }) {
   const [editCard, setEditCard] = useState(false)

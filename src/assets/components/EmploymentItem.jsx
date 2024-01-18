@@ -16,7 +16,10 @@ function EmploymentItem({ item }) {
         <div  className="cont">
           <div onClick={_ => setEditCard(!editCard)}className="cont-title">
             <p>{item.jobTitle === `` ? `Not specified` : item.jobTitle}</p>
-            <p className="date"></p>
+            <p className="date">
+              {item.startDate === `` ? `` : item.startDate}
+              {item.endDate === `` ? `` : ` - ${item.endDate}`}
+            </p>
           </div>
           <div onClick={destroyEmpl} className="delete">{DeleteIcon}</div>
         </div>

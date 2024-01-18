@@ -33,7 +33,7 @@ function SkillList() {
         ))}
       </div>
       <p onClick={addCustomSkill} className="aditional-click">
-        {skills.length === 0 ? `+ Add skill` : `+ Add one more skill`}
+        {skills.length === 0 ? `+ Add skill` : `+ Add one more skills`}
       </p>
     </div>
   )

@@ -3,6 +3,7 @@ import ProfesSummary from "./ProfesSummary"
 import EmploymentList from "./EmploymentList"
 import EducationList from "./EducationList"
 import SkillList from "./SkillList"
+import LanguageList from "./LanguageList"
 
 function Input() {
   return (
@@ -12,6 +13,7 @@ function Input() {
       <EmploymentList />
       <EducationList />
       <SkillList />
+      <LanguageList />
     </div>
   )
 }

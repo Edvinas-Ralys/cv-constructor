@@ -2,8 +2,6 @@ import { createContext, useState } from "react"
 
 export const CVInformation = createContext()
 
-
-
 export const CVInformationProvider = ({ children }) => {
   const [personalInfo, setPersonalInfo] = useState({
     name: ``,
@@ -17,8 +15,7 @@ export const CVInformationProvider = ({ children }) => {
   const [employment, setEmployment] = useState([])
   const [education, setEducation] = useState([])
   const [skills, setSkills] = useState([])
-
-
+  const [languanges, setLanguages] = useState([])
 
   return (
     <CVInformation.Provider
@@ -31,6 +28,8 @@ export const CVInformationProvider = ({ children }) => {
         setEducation,
         skills,
         setSkills,
+        languanges,
+        setLanguages,
       }}
     >
       {children}
