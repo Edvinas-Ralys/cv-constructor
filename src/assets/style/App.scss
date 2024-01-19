@@ -1,6 +1,8 @@
 $inputBg: rgba(64, 72, 114, 0.123);
 $bottomBorderFocus: 2px solid rgb(83, 83, 236);
 $textFocus: rgb(87, 126, 255);
+$dispWidth: 600px;
+$dispWidthDin: 45vw;
 
 ::-webkit-scrollbar {
   width: 0;
@@ -15,6 +17,7 @@ body {
   font-family: Nunito;
   padding: 0;
   margin: 0;
+  // transition: 1s ease-in-out;
 }
 
 .main {
@@ -60,14 +63,17 @@ input {
 .skill-edit,
 .education-input,
 .skills-input,
-.lang-input, .lang-edit {
+.lang-input,
+.lang-edit,
+.courses-input,
+.course-edit {
   display: flex;
   flex-direction: column;
   height: fit-content;
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
   gap: 15px;
   box-sizing: border-box;
   .title {
@@ -129,6 +135,26 @@ input {
       color: blue;
     }
   }
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      width: 100px;
+      background-color: $textFocus;
+      color: white;
+      border: none;
+      height: 30px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.1s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+        transform: scale(1.05);
+      }
+    }
+  }
 }
 
 .content {
@@ -151,22 +177,23 @@ input {
 
 .employment-list,
 .education-list,
-.skill-list, .lang-list {
+.skill-list,
+.lang-list,
+.courses-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 .empl-card,
 .edu-card,
-.skill-card, .lang-card {
+.skill-card,
+.lang-card,
+.course-card {
   width: 100%;
   height: fit-content;
   border: 1px solid rgba(128, 128, 128, 0.514);
   box-sizing: border-box;
 
-  .empl-edit {
-    padding-bottom: 20px;
-  }
   .dates-split {
     width: 48%;
     .date-inputs {
@@ -244,4 +271,80 @@ input {
   color: white !important;
   user-select: none;
   // pointer-events: none;
+}
+
+.output {
+  background-color: rgb(87, 88, 117);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: sticky;
+  right: 0;
+  top: 0;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .output-display {
+    background-color: white;
+    width: $dispWidth;
+    height: calc(1.41 * $dispWidth);
+    transition: 0.1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vw;
+    box-sizing: border-box;
+    gap: 3vw;
+
+    .header {
+      display: flex;
+      border: 1px solid gray;
+      .basic-info {
+        display: flex;
+        font-size: 2.2vw;
+        display: flex;
+        flex-direction: column;
+        .job-title {
+          font-size: 1.2vw;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+
+    .side-cont{
+      width: 22%;
+    }
+
+    .main-information{
+      width: 72%;
+      .profile {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        gap: 0.5vw;
+        .title {
+          font-size: 1.7vw;
+        }
+        width: 70%;
+        font-size: 1vw;
+      }
+
+    }
+
+
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .output-display {
+    transition: 0.1s ease-in-out;
+    // background-color: white;
+    width: $dispWidthDin !important;
+    height: calc(1.41 * $dispWidthDin) !important;
+  }
 }

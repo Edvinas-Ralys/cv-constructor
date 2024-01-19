@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { CVInformation } from "./data/InformationCont"
+import { CVInformation } from "../data/InformationCont"
 import LanguageItem from "./LanguageItem"
 import { v4 as uuidv4 } from "uuid"
 

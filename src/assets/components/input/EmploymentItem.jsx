@@ -1,58 +1,56 @@
-import { DeleteIcon } from "./Icons"
+import { DeleteIcon } from "../svgs/Icons"
 import { useContext, useState } from "react"
-import { CVInformation } from "./data/InformationCont"
+import { CVInformation } from "../data/InformationCont"
 
-function EducationItem({ item }) {
+function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
-  const {setEducation, education } = useContext(CVInformation)
+  const { setEmployment } = useContext(CVInformation)
 
-  const destroyEdu = _ => {
-    setEducation(edus => edus.filter(edu => edu.id !== item.id))
+  const destroyEmpl =_ =>{
+    setEmployment(jobs => jobs.filter(job => job.id !== item.id))
   }
 
   return (
     <>
-      <div className="edu-card">
-        <div className="cont">
-          <div onClick={_ => setEditCard(!editCard)} className="cont-title">
-            <p>{item.school === `` ? `Not specified` : item.school}</p>
+      <div className="empl-card">
+        <div  className="cont">
+          <div onClick={_ => setEditCard(!editCard)}className="cont-title">
+            <p>{item.jobTitle === `` ? `Not specified` : item.jobTitle}</p>
             <p className="date">
               {item.startDate === `` ? `` : item.startDate}
               {item.endDate === `` ? `` : ` - ${item.endDate}`}
             </p>
           </div>
-          <div onClick={destroyEdu} className="delete">
-            {DeleteIcon}
-          </div>
+          <div onClick={destroyEmpl} className="delete">{DeleteIcon}</div>
         </div>
         {editCard && (
-          <div className="edu-edit">
+          <div className="empl-edit">
             <div className="section">
-              <div className="school input">
-                <label htmlFor="title">School</label>
+              <div className="job input">
+                <label htmlFor="title">Job title</label>
                 <input
                   type="text"
-                  value={item.school}
+                  value={item.jobTitle}
                   onChange={e =>
-                    setEducation(edus =>
-                      edus.map(edu =>
-                        edu.id === item.id ? { ...edu, school: e.target.value } : edu
+                    setEmployment(jobs =>
+                      jobs.map(job =>
+                        job.id === item.id ? { ...job, jobTitle: e.target.value } : job
                       )
                     )
                   }
                   id="title"
                 />
               </div>
-              <div className="degree input">
-                <label htmlFor="employer">Degree</label>
+              <div className="employer input">
+                <label htmlFor="employer">Employer</label>
                 <input
                   type="text"
                   id="emplyer"
-                  value={item.degree}
+                  value={item.employer}
                   onChange={e =>
-                    setEducation(edus =>
-                      edus.map(edu =>
-                        edu.id === item.id ? { ...edu, degree: e.target.value } : edu
+                    setEmployment(jobs =>
+                      jobs.map(job =>
+                        job.id === item.id ? { ...job, employer: e.target.value } : job
                       )
                     )
                   }
@@ -67,9 +65,9 @@ function EducationItem({ item }) {
                     type="date"
                     value={item.startDate}
                     onChange={e =>
-                      setEducation(edus =>
-                        edus.map(edu =>
-                          edu.id === item.id ? { ...edu, startDate: e.target.value } : edu
+                      setEmployment(jobs =>
+                        jobs.map(job =>
+                          job.id === item.id ? { ...job, startDate: e.target.value } : job
                         )
                       )
                     }
@@ -78,9 +76,9 @@ function EducationItem({ item }) {
                     type="date"
                     value={item.endDate}
                     onChange={e =>
-                      setEducation(edus =>
-                        edus.map(edu =>
-                          edu.id === item.id ? { ...edu, endDate: e.target.value } : edu
+                      setEmployment(jobs =>
+                        jobs.map(job =>
+                          job.id === item.id ? { ...job, endDate: e.target.value } : job
                         )
                       )
                     }
@@ -95,10 +93,8 @@ function EducationItem({ item }) {
                   placeholder="city"
                   value={item.city}
                   onChange={e =>
-                    setEducation(edus =>
-                      edus.map(edu =>
-                        edu.id === item.id ? { ...edu, city: e.target.value } : edu
-                      )
+                    setEmployment(jobs =>
+                      jobs.map(job => (job.id === item.id ? { ...job, city: e.target.value } : job))
                     )
                   }
                 />
@@ -113,15 +109,17 @@ function EducationItem({ item }) {
                 rows="50"
                 value={item.description}
                 onChange={e =>
-                  setEducation(edus =>
-                    edus.map(edu =>
-                      edu.id === item.id ? { ...edu, description: e.target.value } : edu
+                  setEmployment(jobs =>
+                    jobs.map(job =>
+                      job.id === item.id ? { ...job, description: e.target.value } : job
                     )
                   )
                 }
               ></textarea>
             </div>
-
+            <div className="buttons">
+            <button onClick={_ => setEditCard(!editCard)}>Save</button>
+          </div>
           </div>
         )}
       </div>
@@ -129,4 +127,4 @@ function EducationItem({ item }) {
   )
 }
 
-export default EducationItem
+export default EmploymentItem

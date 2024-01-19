@@ -1,9 +1,10 @@
-import PersonalInfo from "./PersonalInfo"
-import ProfesSummary from "./ProfesSummary"
-import EmploymentList from "./EmploymentList"
-import EducationList from "./EducationList"
-import SkillList from "./SkillList"
-import LanguageList from "./LanguageList"
+import PersonalInfo from "./input/PersonalInfo"
+import ProfesSummary from "./input/ProfesSummary"
+import EmploymentList from "./input/EmploymentList"
+import EducationList from "./input/EducationList"
+import SkillList from "./input/SkillList"
+import LanguageList from "./input/LanguageList"
+import CoursesList from "./input/CoursesList"
 
 function Input() {
   return (
@@ -14,6 +15,7 @@ function Input() {
       <EducationList />
       <SkillList />
       <LanguageList />
+      <CoursesList />
     </div>
   )
 }

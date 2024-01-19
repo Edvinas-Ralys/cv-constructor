@@ -1,5 +1,6 @@
+
 import { useContext } from "react"
-import { CVInformation } from "./data/InformationCont"
+import { CVInformation } from "../data/InformationCont"
 
 function SkillSelect({ skill, index }) {
   const { setSkills, skills } = useContext(CVInformation)

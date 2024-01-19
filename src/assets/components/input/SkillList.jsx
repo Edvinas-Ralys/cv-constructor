@@ -1,12 +1,13 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import SkillSelect from "./SkillSelect"
-import { skillsPreset } from "./data/skillsPreset"
-import { CVInformation } from "./data/InformationCont"
+import { skillsPreset } from "../data/skillsPreset"
+import { CVInformation } from "../data/InformationCont"
 import { v4 as uuidv4 } from "uuid"
 import SkillItem from "./SkillItem"
 
 function SkillList() {
   const { skills, setSkills } = useContext(CVInformation)
+  const [editCard, setEditCard] = useState(false)
 
   const addCustomSkill = _ => {
     setSkills(prev => [...prev, { text: ``, id: uuidv4() }])

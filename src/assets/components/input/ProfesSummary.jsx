@@ -1,5 +1,5 @@
 import React from "react"
-import { CVInformation } from "./data/InformationCont"
+import { CVInformation } from "../data/InformationCont"
 import { useContext, useState } from "react"
 
 function ProfesSummary() {

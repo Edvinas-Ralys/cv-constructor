@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { CVInformation } from "./data/InformationCont"
+import { CVInformation } from "../data/InformationCont"
 import EducationItem from "./EducationItem"
 import { v4 as uuidv4 } from "uuid"
 

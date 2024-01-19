@@ -1,10 +1,10 @@
 import { useContext, useState } from "react"
-import { DeleteIcon } from "./Icons"
-import { CVInformation } from "./data/InformationCont"
+import { DeleteIcon } from "../svgs/Icons"
+import { CVInformation } from "../data/InformationCont"
 
 function LanguageItem({ lang }) {
   const { setLanguages } = useContext(CVInformation)
-  const [editCard, setEditCard] = useState(false)
+  const [editCard, setEditCard] = useState(true)
 
   const deleteLang = _ => {
     setLanguages(prev => prev.filter(langInArr => langInArr.id !== lang.id))
@@ -37,6 +37,9 @@ function LanguageItem({ lang }) {
                 }
               />
             </div>
+          </div>
+          <div className="buttons">
+            <button onClick={_ => setEditCard(!editCard)}>Save</button>
           </div>
         </div>
       )}

@@ -11,11 +11,13 @@ export const CVInformationProvider = ({ children }) => {
     city: ``,
     country: ``,
     profSum: ``,
+    jobTitle: ``
   })
   const [employment, setEmployment] = useState([])
   const [education, setEducation] = useState([])
   const [skills, setSkills] = useState([])
   const [languanges, setLanguages] = useState([])
+  const [courses, setCourses] = useState([])
 
   return (
     <CVInformation.Provider
@@ -30,6 +32,8 @@ export const CVInformationProvider = ({ children }) => {
         setSkills,
         languanges,
         setLanguages,
+        courses,
+        setCourses,
       }}
     >
       {children}

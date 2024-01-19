@@ -1,13 +1,10 @@
 import { useContext, useState } from "react"
-import { CVInformation } from "./data/InformationCont"
+import { CVInformation } from "../data/InformationCont"
 
 function PersonalInfo() {
-
-
   const { personalInfo, setPersonalInfo } = useContext(CVInformation)
 
   const [aditionalInfo, setAditionalInfo] = useState(false)
-
 
   return (
     <div className="personal-input info-section">
@@ -15,7 +12,12 @@ function PersonalInfo() {
       <div className="inputs">
         <div className="job-title input">
           <label htmlFor="job-title">Job Title</label>
-          <input type="text" id="job-title" />
+          <input
+            type="text"
+            id="job-title"
+            value={personalInfo.jobTitle}
+            onChange={e => setPersonalInfo(prev => ({ ...prev, jobTitle: e.target.value }))}
+          />
         </div>
         <div className="section">
           <div className="name input">
@@ -107,10 +109,10 @@ function PersonalInfo() {
               </div>
             </div>
             <div className="section single">
-                <div className="linkedin input">
-                    <label htmlFor="linkedin">LinkedIn</label>
-                    <input type="text" name="" id="linkedin" />
-                </div>
+              <div className="linkedin input">
+                <label htmlFor="linkedin">LinkedIn</label>
+                <input type="text" name="" id="linkedin" />
+              </div>
             </div>
           </div>
         )}

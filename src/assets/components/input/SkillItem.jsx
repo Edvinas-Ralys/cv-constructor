@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
-import { DeleteIcon } from "./Icons"
-import { CVInformation } from "./data/InformationCont"
+import { DeleteIcon } from "../svgs/Icons"
+import { CVInformation } from "../data/InformationCont"
 
 
 function SkillItem({ skillItem }) {
@@ -40,6 +40,9 @@ function SkillItem({ skillItem }) {
                 }
               />
             </div>
+          </div>
+          <div className="buttons">
+            <button onClick={_ => setEditCard(!editCard)}>Save</button>
           </div>
         </div>
       )}
