@@ -1,8 +1,13 @@
 $inputBg: rgba(64, 72, 114, 0.123);
 $bottomBorderFocus: 2px solid rgb(83, 83, 236);
 $textFocus: rgb(87, 126, 255);
-$dispWidth: 600px;
+$dispWidth: 32vw;
 $dispWidthDin: 45vw;
+$fontSizeTitle: 1.2vw;
+$fontSizeText: 0.6vw;
+$fontSizeTitleSmall: 0.7vw;
+$fontSizeTextSmall: 0.5vw;
+$jobFontSize:0.8vw;
 
 ::-webkit-scrollbar {
   width: 0;
@@ -294,11 +299,10 @@ input {
     flex-direction: column;
     padding: 1.5vw;
     box-sizing: border-box;
-    gap: 3vw;
+    gap: 1vw;
 
     .header {
       display: flex;
-      border: 1px solid gray;
       .basic-info {
         display: flex;
         font-size: 2.2vw;
@@ -314,37 +318,100 @@ input {
   .content {
     display: flex;
     justify-content: space-between;
-    border: 1px solid gray;
 
-    .side-cont{
-      width: 22%;
+    .side-cont {
+      width: 27%;
+      display: flex;
+      flex-direction: column;
+      gap: 2vw;
+      .address {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7vw;
+        .section {
+          display: flex;
+          flex-direction: column;
+          gap: 0vw;
+          .title {
+            font-size: $fontSizeTitleSmall;
+          }
+
+          .section-info {
+            display: flex;
+            flex-direction: column;
+            font-size: $fontSizeTextSmall;
+          }
+        }
+      }
+      .skills,
+      .languages {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-size: $fontSizeTitleSmall;
+        }
+        .skill,
+        .language {
+          font-size: $fontSizeTextSmall;
+        }
+      }
     }
 
-    .main-information{
-      width: 72%;
+    .main-information {
+      display: flex;
+      flex-direction: column;
+      gap: 2vw;
+      width: 70%;
       .profile {
         display: flex;
         flex-direction: column;
         width: 100% !important;
         gap: 0.5vw;
         .title {
-          font-size: 1.7vw;
+          font-size: $fontSizeTitle;
+          font-weight: 700;
         }
         width: 70%;
-        font-size: 1vw;
+        font-size: $fontSizeText;
       }
 
+      .employment {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        .title {
+          font-size: $fontSizeTitle;
+          font-weight: 700;
+        }
+
+        .employments {
+          display: flex;
+          flex-direction: column;
+          gap: 1vw;
+
+          .section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5vw;
+
+            .job-intro {
+              display: flex;
+              flex-direction: column;
+              .job-title {
+                font-size: $jobFontSize;
+              }
+              .job-date {
+                font-size: 0.6vw;
+                color: gray;
+              }
+            }
+            .job-description {
+              font-size: $fontSizeText;
+            }
+          }
+        }
+      }
     }
-
-
-  }
-}
-
-@media only screen and (max-width: 1250px) {
-  .output-display {
-    transition: 0.1s ease-in-out;
-    // background-color: white;
-    width: $dispWidthDin !important;
-    height: calc(1.41 * $dispWidthDin) !important;
   }
 }

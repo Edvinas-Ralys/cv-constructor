@@ -4,14 +4,21 @@ export const CVInformation = createContext()
 
 export const CVInformationProvider = ({ children }) => {
   const [personalInfo, setPersonalInfo] = useState({
-    name: ``,
-    surname: ``,
-    email: ``,
-    phoneNumber: ``,
-    city: ``,
-    country: ``,
-    profSum: ``,
-    jobTitle: ``
+    name: `Edvinas`,
+    surname: `Ralys`,
+    email: `edvinas.ralys97@gmail.com`,
+    phoneNumber: `112`,
+    city: `Kaunas`,
+    country: `Lithuania`,
+    profSum: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea. Est velit egestas dui id ornare arcu odio ut.`,
+    jobTitle: `JS`,
+    address: `Pasiles g`,
+    postalCode: `55965`,
+    driving: `Big`,
+    nationality: `Lithuanian`,
+    birthPlace: `Lyduvenai`,
+    birthDate: `1997-01-05`,
+    linkedIn: `yes`,
   })
   const [employment, setEmployment] = useState([])
   const [education, setEducation] = useState([])

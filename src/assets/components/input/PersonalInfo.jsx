@@ -81,37 +81,79 @@ function PersonalInfo() {
             <div className="section">
               <div className="adress input">
                 <label htmlFor="adress">Adress</label>
-                <input type="text" name="" id="adress" />
+                <input
+                  type="text"
+                  name=""
+                  id="adress"
+                  value={personalInfo.address}
+                  onChange={e => setPersonalInfo(prev => ({ ...prev, address: e.target.value }))}
+                />
               </div>
               <div className="postal input">
                 <label htmlFor="postal">Postal Code</label>
-                <input type="text" name="" id="postal" />
+                <input
+                  type="text"
+                  name=""
+                  id="postal"
+                  value={personalInfo.postalCode}
+                  onChange={e => setPersonalInfo(prev => ({ ...prev, postalCode: e.target.value }))}
+                />
               </div>
             </div>
             <div className="section">
               <div className="driving input">
                 <label htmlFor="driving input">Driving License</label>
-                <input type="text" name="" id="driving" />
+                <input
+                  type="text"
+                  name=""
+                  id="driving"
+                  value={personalInfo.driving}
+                  onChange={e => setPersonalInfo(prev => ({ ...prev, driving: e.target.value }))}
+                />
               </div>
               <div className="nationality input">
                 <label htmlFor="nationality">Nationality</label>
-                <input type="text" name="" id="nationality" />
+                <input
+                  type="text"
+                  name=""
+                  id="nationality"
+                  value={personalInfo.nationality}
+                  onChange={e =>
+                    setPersonalInfo(prev => ({ ...prev, nationality: e.target.value }))
+                  }
+                />
               </div>
             </div>
             <div className="section">
               <div className="place-of-birth input">
                 <label htmlFor="place">Place Of Birth</label>
-                <input type="text" id="place-of-birth" />
+                <input
+                  type="text"
+                  id="place-of-birth"
+                  value={personalInfo.birthPlace}
+                  onChange={e => setPersonalInfo(prev => ({ ...prev, birthPlace: e.target.value }))}
+                />
               </div>
               <div className="date-of-birth input">
                 <label htmlFor="date">Date Of Birth</label>
-                <input type="text" id="date" />
+                <input
+                  type="date"
+                  id="date"
+                  value={personalInfo.birthDate}
+                  onChange={e => setPersonalInfo(prev => ({ ...prev, birthDate: e.target.value }))}
+                />
               </div>
             </div>
             <div className="section single">
               <div className="linkedin input">
                 <label htmlFor="linkedin">LinkedIn</label>
-                <input type="text" name="" id="linkedin" />
+                <input
+                  type="text"
+                  name=""
+                  id="linkedin"
+                  value={personalInfo.linkedIn}
+                  onChange={e => setPersonalInfo(prev => ({ ...prev, linkedIn: e.target.value }))}
+                />
               </div>
             </div>
           </div>

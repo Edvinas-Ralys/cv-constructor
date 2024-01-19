@@ -1,4 +1,6 @@
 import Address from "./Address"
+import Languages from "./Languages"
+import Skills from "./Skills"
 
 function Sidebar() {
 
@@ -7,7 +9,8 @@ function Sidebar() {
   return (
     <div className="side-cont">
       <Address />
-
+      <Skills />
+      <Languages />
 
     </div>
   )
