@@ -1,5 +1,5 @@
 import { DeleteIcon } from "../svgs/Icons"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CVInformation } from "../data/InformationCont"
 import { employmentPreset } from "../data/userPreset"
 import { v4 as uuidv4 } from "uuid"
@@ -7,6 +7,18 @@ import { v4 as uuidv4 } from "uuid"
 function EmploymentItem({ item }) {
   const [editCard, setEditCard] = useState(false)
   const { employment, setEmployment } = useContext(CVInformation)
+  const [autoFillCount, setAutoFillCount] = useState(false)
+
+  useEffect(
+    _ => {
+      employment.filter(
+        emplItem => emplItem.id === employmentPreset[0].id || emplItem.id === employmentPreset[1].id
+      ).length === 2
+        ? setAutoFillCount(true)
+        : setAutoFillCount(false)
+    },
+    [employment]
+  )
 
   const destroyEmpl = _ => {
     setEmployment(jobs => jobs.filter(job => job.id !== item.id))
@@ -80,7 +92,14 @@ function EmploymentItem({ item }) {
               {item.endDate === `` ? `` : ` - ${item.endDate}`}
             </p>
           </div>
-
+          <div className="buttons">
+            <button onClick={handleEmplClear} className="clear">
+              Clear
+            </button>
+            <button className={`${autoFillCount && `disabled`}`} onClick={handleEmplFill}>
+              Auto-fill
+            </button>
+          </div>
           <div onClick={destroyEmpl} className="delete">
             {DeleteIcon}
           </div>

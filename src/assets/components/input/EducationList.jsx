@@ -27,7 +27,7 @@ function EducationList() {
         Education
         <p className="description">
           A varied education on your resume sums up the value that your learnings and background
-          wils bring to the job
+          will bring to the job. One reset is available
         </p>
       </div>
       <div className="input">

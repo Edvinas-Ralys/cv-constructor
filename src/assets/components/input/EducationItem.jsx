@@ -1,22 +1,65 @@
 import { DeleteIcon } from "../svgs/Icons"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CVInformation } from "../data/InformationCont"
+import { educationPreset } from "../data/userPreset"
+import { v4 as uuidv4 } from "uuid"
 
 function EducationItem({ item }) {
   const [editCard, setEditCard] = useState(false)
   const { setEducation, education } = useContext(CVInformation)
+  const [autoFillCount, setAutoFillCount] = useState(false)
 
   const destroyEdu = _ => {
     setEducation(edus => edus.filter(edu => edu.id !== item.id))
   }
 
+  useEffect(
+    _ => {
+      education.filter(item => item.id === educationPreset[0].id).length === 1
+        ? setAutoFillCount(true)
+        : setAutoFillCount(false)
+    },
+    [education]
+  )
 
-  const handleEduClear = _ =>{
-
+  const handleEduClear = _ => {
+    setEducation(prev =>
+      prev.map(eduInArr =>
+        eduInArr.id === item.id
+          ? {
+              ...item,
+              school: ``,
+              degree: ``,
+              startDate: ``,
+              endDate: ``,
+              city: ``,
+              description: ``,
+              id: uuidv4(),
+            }
+          : eduInArr
+      )
+    )
   }
 
-  const handleEduFill =_ =>{
-
+  const handleEduFill = _ => {
+    if (education.filter(item => item.id === educationPreset[0].id).length === 0) {
+      setEducation(prev =>
+        prev.map(eduInArr =>
+          eduInArr.id === item.id
+            ? {
+                ...item,
+                school: educationPreset[0].school,
+                degree: educationPreset[0].degree,
+                startDate: educationPreset[0].startDate,
+                endDate: educationPreset[0].endDate,
+                city: educationPreset[0].city,
+                description: educationPreset[0].description,
+                id: educationPreset[0].id,
+              }
+            : eduInArr
+        )
+      )
+    }
   }
 
   return (
@@ -34,7 +77,9 @@ function EducationItem({ item }) {
             <button onClick={handleEduClear} className="clear">
               Clear
             </button>
-            <button onClick={handleEduFill}>Auto-fill</button>
+            <button className={`${autoFillCount && `disabled`}`} onClick={handleEduFill}>
+              Auto-fill
+            </button>
           </div>
 
           <div onClick={destroyEdu} className="delete">

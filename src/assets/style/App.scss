@@ -496,10 +496,15 @@ input {
   .cont {
     .buttons {
       display: flex;
-      width: 50%;
+      width: 270px;
       justify-content: space-between;
       .clear {
         background-color: rgba(255, 0, 0, 0.24);
+      }
+      .disabled{
+        user-select: none;
+        pointer-events: none;
+        opacity: 0.5;
       }
     }
   }

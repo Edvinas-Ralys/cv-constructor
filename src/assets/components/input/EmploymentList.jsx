@@ -27,7 +27,7 @@ function EmploymentList() {
         Employment History
         <p className="description">
           Show your relevant experience - last 10 years. Use bullet points to note your achievments,
-          if possible - use numbers/facts
+          if possible - use numbers/facts. Two presets are available
         </p>
       </div>
       <div className="input">

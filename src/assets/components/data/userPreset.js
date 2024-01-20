@@ -45,10 +45,10 @@ export const employmentPreset = [
 
 export const educationPreset = [
   {
-    school: `Harward`,
+    school: `Harvard`,
     degree: `Bachelor's`,
-    starDate: `2009`,
-    endDate: `2013`,
+    startDate: `2009-09-01`,
+    endDate: `2013-08-15`,
     city: `Massachusetts`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     id: uuidv4(),
