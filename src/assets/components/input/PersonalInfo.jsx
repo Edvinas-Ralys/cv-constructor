@@ -1,14 +1,37 @@
 import { useContext, useState } from "react"
 import { CVInformation } from "../data/InformationCont"
+import { personalPreset } from "../data/userPreset"
 
 function PersonalInfo() {
   const { personalInfo, setPersonalInfo } = useContext(CVInformation)
-
   const [aditionalInfo, setAditionalInfo] = useState(false)
+
+  const handlePersonalAutofill = _ => {
+    setPersonalInfo(info => ({
+      ...info,
+      name: personalPreset.name,
+      surname: personalPreset.surname,
+      email: personalPreset.email,
+      phoneNumber: `${personalPreset.phoneNumber}`,
+      city: personalPreset.city,
+      country: personalPreset.country,
+      profSum: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea. Est velit egestas dui id ornare arcu odio ut.`,
+      jobTitle: personalPreset.jobTitle,
+      address: personalPreset.address,
+      postalCode: personalPreset.postalCode,
+      driving: personalPreset.driving,
+      nationality: personalPreset.nationality,
+      birthPlace: personalPreset.birthPlace,
+      birthDate: personalPreset.birthDate,
+      linkedIn: personalPreset.linkedIn,
+    }))
+  }
 
   return (
     <div className="personal-input info-section">
-      <div className="title">Personal information</div>
+      <div className="title">
+        Personal information <button onClick={handlePersonalAutofill}>Auto-fill</button>
+      </div>
       <div className="inputs">
         <div className="job-title input">
           <label htmlFor="job-title">Job Title</label>
