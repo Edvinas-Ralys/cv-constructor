@@ -5,12 +5,14 @@ function Employment() {
   const { employment } = useContext(CVInformation)
 
   return (
-    <div className="employment">
-      <div className="title">Employment History</div>
-      <div className="employments">
-        {employment.map((item, i) => (
-          <div className="section">
-              <div className="job-intro">
+    <>
+      {employment.length !== 0 && (
+        <div className="employment">
+          <div className="title">Employment History</div>
+          <div className="employments">
+            {employment.map((item, i) => (
+              <div className="section">
+                <div className="job-intro">
                   <div className="job-title">
                     {item.jobTitle}
                     {item.employer !== `` ? ` at ${item.employer}` : null}
@@ -19,15 +21,14 @@ function Employment() {
                   <div className="job-date">
                     {item.startDate} {item.endDate !== `` ? `- ${item.endDate}` : null}
                   </div>
+                </div>
+                <div className="job-description">{item.description}</div>
               </div>
-              <div className="job-description">
-                {item.description}
-              </div>
+            ))}
           </div>
-
-        ))}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   )
 }
 

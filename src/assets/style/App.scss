@@ -34,6 +34,7 @@ body {
     width: 50%;
     display: flex;
     justify-content: center;
+    user-select: none;
     // flex-direction: column;
   }
 }
@@ -275,7 +276,7 @@ input {
   background-color: $textFocus !important;
   color: white !important;
   user-select: none;
-  // pointer-events: none;
+  pointer-events: none;
 }
 
 .output {
@@ -361,7 +362,7 @@ input {
     .main-information {
       display: flex;
       flex-direction: column;
-      gap: 2vw;
+      gap: 1.5vw;
       width: 70%;
       .profile {
         display: flex;
@@ -376,16 +377,16 @@ input {
         font-size: $fontSizeText;
       }
 
-      .employment {
+      .employment, .education {
         display: flex;
         flex-direction: column;
-        gap: 1vw;
+        gap: 0.3vw;
         .title {
           font-size: $fontSizeTitle;
           font-weight: 700;
         }
 
-        .employments {
+        .employments, .edus {
           display: flex;
           flex-direction: column;
           gap: 1vw;
@@ -393,20 +394,20 @@ input {
           .section {
             display: flex;
             flex-direction: column;
-            gap: 0.5vw;
+            gap: 0.2vw;
 
-            .job-intro {
+            .job-intro, .edu-intro {
               display: flex;
               flex-direction: column;
-              .job-title {
+              .job-title, .edu-title {
                 font-size: $jobFontSize;
               }
-              .job-date {
+              .job-date, .edu-date, .edu-degree {
                 font-size: 0.6vw;
                 color: gray;
               }
             }
-            .job-description {
+            .job-description, .edu-description {
               font-size: $fontSizeText;
             }
           }

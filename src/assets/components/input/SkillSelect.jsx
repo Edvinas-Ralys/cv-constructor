@@ -1,4 +1,3 @@
-
 import { useContext } from "react"
 import { CVInformation } from "../data/InformationCont"
 
@@ -12,7 +11,12 @@ function SkillSelect({ skill, index }) {
   }
 
   return (
-    <div onClick={addSkill} className={`skill-select`}>
+    <div
+      onClick={addSkill}
+      className={`skill-select ${
+        skills.filter(skillInArr => skillInArr.id === skill.id).length !== 0 && `picked-skill`
+      }`}
+    >
       {skill.text} +
     </div>
   )

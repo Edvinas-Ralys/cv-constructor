@@ -1,3 +1,4 @@
+import Education from "./Education"
 import Employment from "./Employment"
 import Profile from "./Profile"
 
@@ -6,6 +7,7 @@ function MainInfo() {
     <div className="main-information">
         <Profile />
         <Employment />
+        <Education />
     </div>
   )
 }
