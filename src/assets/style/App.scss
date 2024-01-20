@@ -509,3 +509,21 @@ input {
     }
   }
 }
+
+
+.footer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  justify-content: center;
+  .gh-icon{
+    height: 20px;
+    transition: 0.1s ease-in;
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: 0.1s ease-in;
+    }
+  }
+}

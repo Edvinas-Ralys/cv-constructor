@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { DeleteIcon } from "../svgs/Icons"
 import { CVInformation } from "../data/InformationCont"
-
+import { skillsPreset } from "../data/skillsPreset"
 
 function SkillItem({ skillItem }) {
   const [editCard, setEditCard] = useState(false)
@@ -21,7 +21,7 @@ function SkillItem({ skillItem }) {
           {DeleteIcon}
         </div>
       </div>
-      {editCard && (
+      {editCard && skillsPreset.filter(skillPr => skillPr.id === skillItem.id).length === 0 && (
         <div className="skill-edit">
           <div className="section">
             <div className="skill input">

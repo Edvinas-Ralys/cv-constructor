@@ -5,6 +5,7 @@ import EducationList from "./input/EducationList"
 import SkillList from "./input/SkillList"
 import LanguageList from "./input/LanguageList"
 import CoursesList from "./input/CoursesList"
+import Footer from "./output/Footer"
 
 function Input() {
   return (
@@ -15,7 +16,8 @@ function Input() {
       <EducationList />
       <SkillList />
       <LanguageList />
-      <CoursesList />
+      {/* <CoursesList /> */}
+      <Footer />
     </div>
   )
 }
