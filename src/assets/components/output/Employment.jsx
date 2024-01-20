@@ -11,7 +11,7 @@ function Employment() {
           <div className="title">Employment History</div>
           <div className="employments">
             {employment.map((item, i) => (
-              <div className="section">
+              <div key={i} className="section">
                 <div className="job-intro">
                   <div className="job-title">
                     {item.jobTitle}

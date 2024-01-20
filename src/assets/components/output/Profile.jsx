@@ -6,7 +6,8 @@ function Profile() {
 
   return (
     <div className="profile">
-      <p className="title">Profile</p>
+      {personalInfo.profSum !== `` && <p className="title">Profile</p>}
+
       <div className="profile-text">{personalInfo.profSum}</div>
     </div>
   )

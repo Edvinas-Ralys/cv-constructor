@@ -15,7 +15,6 @@ function PersonalInfo() {
       phoneNumber: `${personalPreset.phoneNumber}`,
       city: personalPreset.city,
       country: personalPreset.country,
-      profSum: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea. Est velit egestas dui id ornare arcu odio ut.`,
       jobTitle: personalPreset.jobTitle,
       address: personalPreset.address,
       postalCode: personalPreset.postalCode,
@@ -27,10 +26,34 @@ function PersonalInfo() {
     }))
   }
 
+  const handleClearPersonal = _ => {
+    setPersonalInfo(info => ({
+      ...info,
+      name: ``,
+      surname: ``,
+      email: ``,
+      phoneNumber: ``,
+      city: ``,
+      country: ``,
+      jobTitle: ``,
+      address: ``,
+      postalCode: ``,
+      driving: ``,
+      nationality: ``,
+      birthPlace: ``,
+      birthDate: ``,
+      linkedIn: ``,
+    }))
+  }
+
   return (
     <div className="personal-input info-section">
       <div className="title">
-        Personal information <button onClick={handlePersonalAutofill}>Auto-fill</button>
+        Personal information{" "}
+        <div className="buttons">
+          <button className="clear" onClick={handleClearPersonal}>Clear</button>
+          <button onClick={handlePersonalAutofill}>Auto-fill</button>
+        </div>
       </div>
       <div className="inputs">
         <div className="job-title input">

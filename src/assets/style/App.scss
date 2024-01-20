@@ -7,7 +7,7 @@ $fontSizeTitle: 1.2vw;
 $fontSizeText: 0.6vw;
 $fontSizeTitleSmall: 0.7vw;
 $fontSizeTextSmall: 0.5vw;
-$jobFontSize:0.8vw;
+$jobFontSize: 0.8vw;
 
 ::-webkit-scrollbar {
   width: 0;
@@ -42,6 +42,7 @@ body {
 .user-input {
   display: flex;
   flex-direction: column;
+  padding-top: 50px;
   gap: 30px;
 }
 
@@ -377,7 +378,8 @@ input {
         font-size: $fontSizeText;
       }
 
-      .employment, .education {
+      .employment,
+      .education {
         display: flex;
         flex-direction: column;
         gap: 0.3vw;
@@ -386,7 +388,8 @@ input {
           font-weight: 700;
         }
 
-        .employments, .edus {
+        .employments,
+        .edus {
           display: flex;
           flex-direction: column;
           gap: 1vw;
@@ -396,22 +399,107 @@ input {
             flex-direction: column;
             gap: 0.2vw;
 
-            .job-intro, .edu-intro {
+            .job-intro,
+            .edu-intro {
               display: flex;
               flex-direction: column;
-              .job-title, .edu-title {
+              .job-title,
+              .edu-title {
                 font-size: $jobFontSize;
               }
-              .job-date, .edu-date, .edu-degree {
+              .job-date,
+              .edu-date,
+              .edu-degree {
                 font-size: 0.6vw;
                 color: gray;
               }
             }
-            .job-description, .edu-description {
+            .job-description,
+            .edu-description {
               font-size: $fontSizeText;
             }
           }
         }
+      }
+    }
+  }
+}
+
+.personal-input {
+  .title {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .buttons {
+      display: flex;
+      width: 40%;
+      justify-content: space-around;
+      .clear {
+        background-color: rgba(255, 0, 0, 0.24);
+      }
+      button {
+        width: 100px;
+        background-color: $textFocus;
+        color: white;
+        border: none;
+        height: 30px;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 15px;
+        transition: 0.1s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          transition: 0.1s ease-in-out;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.professional-summary {
+  .title {
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .buttons {
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+        .clear {
+          background-color: rgba(255, 0, 0, 0.24);
+        }
+        button {
+          width: 100px;
+          background-color: $textFocus;
+          color: white;
+          border: none;
+          height: 30px;
+          border-radius: 5px;
+          font-weight: 700;
+          font-size: 15px;
+          transition: 0.1s ease-in-out;
+          &:hover {
+            cursor: pointer;
+            transition: 0.1s ease-in-out;
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+.empl-card,
+.edu-card {
+  .cont {
+    .buttons {
+      display: flex;
+      width: 50%;
+      justify-content: space-between;
+      .clear {
+        background-color: rgba(255, 0, 0, 0.24);
       }
     }
   }

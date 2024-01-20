@@ -10,6 +10,15 @@ function EducationItem({ item }) {
     setEducation(edus => edus.filter(edu => edu.id !== item.id))
   }
 
+
+  const handleEduClear = _ =>{
+
+  }
+
+  const handleEduFill =_ =>{
+
+  }
+
   return (
     <>
       <div className="edu-card">
@@ -21,6 +30,13 @@ function EducationItem({ item }) {
               {item.endDate === `` ? `` : ` - ${item.endDate}`}
             </p>
           </div>
+          <div className="buttons">
+            <button onClick={handleEduClear} className="clear">
+              Clear
+            </button>
+            <button onClick={handleEduFill}>Auto-fill</button>
+          </div>
+
           <div onClick={destroyEdu} className="delete">
             {DeleteIcon}
           </div>

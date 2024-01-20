@@ -25,8 +25,8 @@ export const employmentPreset = [
   {
     jobTitle: `Directing Manager`,
     employer: `Google`,
-    startDate: `2015-02`,
-    endDate: `2023-05`,
+    startDate: `2015-02-01`,
+    endDate: `2023-05-31`,
     city: `Washington`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     id: uuidv4(),
@@ -35,8 +35,8 @@ export const employmentPreset = [
   {
     jobTitle: `Customer Support`,
     employer: `Apple`,
-    startDate: `2012-01`,
-    endDate: `2014-09`,
+    startDate: `2012-01-01`,
+    endDate: `2014-09-30`,
     city: `Washington`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     id: uuidv4(),
